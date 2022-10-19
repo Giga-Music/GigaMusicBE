@@ -25,3 +25,5 @@
 
 ### Music:
 #### Get random track (by Play list) (with limit) params: (?limit=5 ?playlist=id)
+
+# [Design](https://whimsical.com/gigamusic-Dk7K5FKSoExK22H8Petw5Z)
