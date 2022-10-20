@@ -219,3 +219,7 @@ buildNumber.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij+all,intellij,maven
 
+/GigaMusicBE.iml
+/.mvn/wrapper/maven-wrapper.properties
+/mvnw
+/mvnw.cmd
