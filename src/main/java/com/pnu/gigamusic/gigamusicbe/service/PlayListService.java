@@ -25,7 +25,7 @@ public class PlayListService {
         return playListRepository.findAll();
     }
 
-    public void delete(String id) {
+    public void delete(Long id) {
         playListRepository.deleteById(id);
     }
 

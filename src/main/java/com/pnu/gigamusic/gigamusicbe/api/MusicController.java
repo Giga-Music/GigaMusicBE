@@ -3,13 +3,11 @@ package com.pnu.gigamusic.gigamusicbe.api;
 import com.pnu.gigamusic.gigamusicbe.domain.Music;
 import com.pnu.gigamusic.gigamusicbe.service.MusicService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.security.RolesAllowed;
 import java.util.List;
-
-import static com.pnu.gigamusic.gigamusicbe.constant.SecurityConstants.ADMIN;
 
 @RestController
 @RequestMapping("/music")
@@ -18,13 +16,13 @@ public class MusicController {
 
     private final MusicService musicService;
 
-    @RolesAllowed(ADMIN)
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public Music create(@Validated @RequestBody Music music) {
         return musicService.create(music);
     }
 
-    @RolesAllowed(ADMIN)
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping
     public Music update(@Validated @RequestBody Music music) {
         return musicService.update(music);
@@ -35,9 +33,9 @@ public class MusicController {
         return musicService.findAll();
     }
 
-    @RolesAllowed(ADMIN)
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable String id) {
+    public void delete(@PathVariable Long id) {
         musicService.delete(id);
     }
 

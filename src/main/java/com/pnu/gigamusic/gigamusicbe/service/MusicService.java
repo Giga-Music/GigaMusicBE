@@ -25,7 +25,7 @@ public class MusicService {
         return musicRepository.findAll();
     }
 
-    public void delete(String id) {
+    public void delete(Long id) {
         musicRepository.deleteById(id);
     }
 
