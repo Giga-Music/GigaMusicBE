@@ -4,11 +4,12 @@ import com.pnu.gigamusic.gigamusicbe.domain.PlayList;
 import com.pnu.gigamusic.gigamusicbe.service.PlayListService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/playList")
 @RequiredArgsConstructor
@@ -18,13 +19,13 @@ public class PlayListController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
-    public PlayList create(@Validated @RequestBody PlayList playList) {
+    public PlayList create(@Valid @RequestBody PlayList playList) {
         return playListService.create(playList);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping
-    public PlayList update(@Validated @RequestBody PlayList playList) {
+    public PlayList update(@Valid @RequestBody PlayList playList) {
         return playListService.update(playList);
     }
 
@@ -37,6 +38,11 @@ public class PlayListController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         playListService.delete(id);
+    }
+
+    @PostMapping("/{id}/addRating")
+    public void addRating(@PathVariable Long id, @RequestParam Integer rating) {
+        playListService.addRating(id, rating);
     }
 
 }
