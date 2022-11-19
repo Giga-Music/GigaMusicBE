@@ -1,4 +1,4 @@
-package com.pnu.gigamusic.gigamusicbe.config;
+package com.pnu.gigamusic.gigamusicbe.component;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

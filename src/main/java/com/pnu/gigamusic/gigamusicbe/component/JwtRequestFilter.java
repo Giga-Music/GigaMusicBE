@@ -1,4 +1,4 @@
-package com.pnu.gigamusic.gigamusicbe.config;
+package com.pnu.gigamusic.gigamusicbe.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;

@@ -1,4 +1,4 @@
-package com.pnu.gigamusic.gigamusicbe.config;
+package com.pnu.gigamusic.gigamusicbe.component;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

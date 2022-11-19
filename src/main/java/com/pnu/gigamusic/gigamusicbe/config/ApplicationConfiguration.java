@@ -1,5 +1,7 @@
 package com.pnu.gigamusic.gigamusicbe.config;
 
+import com.pnu.gigamusic.gigamusicbe.component.JwtAuthenticationEntryPoint;
+import com.pnu.gigamusic.gigamusicbe.component.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

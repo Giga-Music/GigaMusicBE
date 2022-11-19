@@ -2,7 +2,7 @@ package com.pnu.gigamusic.gigamusicbe.api;
 
 import com.pnu.gigamusic.gigamusicbe.api.dto.JwtRequest;
 import com.pnu.gigamusic.gigamusicbe.api.dto.JwtResponse;
-import com.pnu.gigamusic.gigamusicbe.config.JwtTokenUtil;
+import com.pnu.gigamusic.gigamusicbe.component.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
