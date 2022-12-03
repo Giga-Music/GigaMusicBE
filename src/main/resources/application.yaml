@@ -15,6 +15,7 @@ spring:
   servlet:
     multipart:
       max-file-size: 10MB
+
 jwt:
   secret: ${JWT_SECRET:jwtsecret}
 admin:
