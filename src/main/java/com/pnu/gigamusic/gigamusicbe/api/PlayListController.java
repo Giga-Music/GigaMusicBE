@@ -30,8 +30,8 @@ public class PlayListController {
     }
 
     @GetMapping("/list")
-    public List<PlayList> getList() {
-        return playListService.findAll();
+    public List<PlayList> getList(@RequestParam(required = false) String name, @RequestParam(required = false) String sort) {
+        return playListService.findAll(name, sort);
     }
 
     @PreAuthorize("hasRole('ADMIN')")

@@ -1,6 +1,7 @@
 package com.pnu.gigamusic.gigamusicbe.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,6 +25,9 @@ public class PlayList extends BaseEntity {
     private String imageUrl;
 
     private String description;
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private Double rating;
 
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL)

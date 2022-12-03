@@ -15,15 +15,17 @@ public class PlayListService {
     private final PlayListRepository playListRepository;
 
     public PlayList create(PlayList playList) {
+        playList.setRating(playList.getAverageRating());
         return playListRepository.save(playList);
     }
 
     public PlayList update(PlayList playList) {
+        playList.setRating(playList.getAverageRating());
         return playListRepository.save(playList);
     }
 
-    public List<PlayList> findAll() {
-        return playListRepository.findAll();
+    public List<PlayList> findAll(String name, String sort) {
+        return playListRepository.findAll(name, sort);
     }
 
     public void delete(Long id) {
