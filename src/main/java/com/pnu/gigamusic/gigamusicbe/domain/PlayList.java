@@ -1,9 +1,7 @@
 package com.pnu.gigamusic.gigamusicbe.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.util.CollectionUtils;
 
 import javax.persistence.CascadeType;
@@ -16,6 +14,8 @@ import java.util.List;
 @Setter
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
 public class PlayList extends BaseEntity {
 
     @NotBlank

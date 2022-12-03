@@ -20,7 +20,13 @@ public class PlayListService {
     }
 
     public PlayList update(PlayList playList) {
-        playList.setRating(playList.getAverageRating());
+        PlayList existent = playListRepository.getById(playList.getId());
+        existent.toBuilder()
+                .name(playList.getName())
+                .imageUrl(playList.getImageUrl())
+                .description(playList.getDescription())
+                .build();
+        existent.setRating(existent.getAverageRating());
         return playListRepository.save(playList);
     }
 
