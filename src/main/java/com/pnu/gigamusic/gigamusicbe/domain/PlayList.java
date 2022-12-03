@@ -14,8 +14,6 @@ import java.util.List;
 @Setter
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class PlayList extends BaseEntity {
 
     @NotBlank
