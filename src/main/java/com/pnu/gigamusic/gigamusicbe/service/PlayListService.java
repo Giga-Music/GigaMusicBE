@@ -21,13 +21,13 @@ public class PlayListService {
 
     public PlayList update(PlayList playList) {
         PlayList existent = playListRepository.getById(playList.getId());
-        existent.toBuilder()
-                .name(playList.getName())
-                .imageUrl(playList.getImageUrl())
-                .description(playList.getDescription())
-                .build();
         existent.setRating(existent.getAverageRating());
-        return playListRepository.save(playList);
+        return playListRepository.save(
+                existent.toBuilder()
+                        .name(playList.getName())
+                        .imageUrl(playList.getImageUrl())
+                        .description(playList.getDescription())
+                        .build());
     }
 
     public List<PlayList> findAll(String name, String sort) {
