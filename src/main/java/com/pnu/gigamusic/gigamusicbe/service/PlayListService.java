@@ -25,7 +25,7 @@ public class PlayListService {
         existent.setImageUrl(playList.getImageUrl());
         existent.setDescription(playList.getDescription());
         existent.setRating(existent.getAverageRating());
-        return playListRepository.save(playList);
+        return playListRepository.save(existent);
     }
 
     public List<PlayList> findAll(String name, String sort) {
