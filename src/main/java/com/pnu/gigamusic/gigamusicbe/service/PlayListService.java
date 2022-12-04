@@ -32,6 +32,10 @@ public class PlayListService {
         return playListRepository.findAll(name, sort);
     }
 
+    public PlayList getById(Long id) {
+        return playListRepository.getById(id);
+    }
+
     public void delete(Long id) {
         playListRepository.deleteById(id);
     }

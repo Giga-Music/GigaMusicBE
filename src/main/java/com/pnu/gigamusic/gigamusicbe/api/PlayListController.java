@@ -29,6 +29,11 @@ public class PlayListController {
         return playListService.update(playList);
     }
 
+    @GetMapping("/{id}")
+    public PlayList getById(@PathVariable Long id) {
+        return playListService.getById(id);
+    }
+
     @GetMapping("/list")
     public List<PlayList> getList(@RequestParam(required = false) String name, @RequestParam(required = false) String sort) {
         return playListService.findAll(name, sort);
