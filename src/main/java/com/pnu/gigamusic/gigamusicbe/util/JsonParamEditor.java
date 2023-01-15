@@ -8,6 +8,7 @@ import java.beans.PropertyEditorSupport;
 
 @RequiredArgsConstructor
 public class JsonParamEditor<T> extends PropertyEditorSupport {
+
   private final ObjectMapper jsonMapper;
   private final Class<T> tClass;
 
